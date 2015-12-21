@@ -1,6 +1,6 @@
 # 부분 수열 찾기
 
-수열 A[0...n-1]에서 B[0...m-1]과 같은 Subsequence의 개수는?
+수열 A[0...n-1]에서 B[0...m-1]와 같은 Subsequence의 개수는?
 
 Subsequence는 연속으로 선택될 필요는 없다.
 

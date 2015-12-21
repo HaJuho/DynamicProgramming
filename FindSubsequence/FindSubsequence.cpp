@@ -13,7 +13,7 @@ using namespace std;
 static const int MAXN = 1000;
 static const int MAXM = 1000;
 
-// 수열 A[0...n-1]에서 B[0...m-1]과 같은 Subsequence의 개수는?
+// 수열 A[0...n-1]에서 B[0...m-1]와 같은 Subsequence의 개수는?
 // Subsequence는 연속으로 선택될 필요는 없다.
 // C(i,j) = A[0...i-1]에서 찾은 B[0...j-1]와 같은 Subsuquence의 개수
 // C(0,0) = 1

@@ -21,11 +21,13 @@ using namespace juho;
 // 대각선으로도 갈 수 있음
 // B(i,j) = (0,0)에서 (i,j)까지 갈 때 얻을 수 있는 최대 이익
 // B(0,0) = A[0][0]
-// B(0,j) = B(0,j-1) < 0 || A[0][j] < 0 ? -1 : B(0,j-1) + A[0][j]
-// B(i,0) = B(i-1,0) < 0 || A[i][0] < 0 ? -1 : B(i-1,0) + A[i][0]
-// B(i,j) = -1 if A[i][j] < 0
-// C(i,j) = max(B(i-1,j),B(i,j-1),B(i-1,j-1))
-// B(i,j) = C(i,j) + A[i][j] if C(i,j) > 0 else -1
+// B(0,j) = B(0,j-1) < 0 || A[0][j] < 0 ? -1 : B(0,j-1) + A[0][j], if j > 0
+// B(i,0) = B(i-1,0) < 0 || A[i][0] < 0 ? -1 : B(i-1,0) + A[i][0], if i > 0
+// B(i,j) = -1, if A[i][j] < 0, i > 0, j > 0
+// B(i,j) = -1, if B(i-1,j) < 0, B(i,j-1) < 0, B(i-1,j-1) < 0, i > 0, j > 0
+// B(i,j) = max(B(i-1,j), B(i,j-1), B(i-1,j-1)) + A[i][j], if A[i][j] >= 0, max(B(i-1,j), B(i,j-1), B(i-1,j-1)) >= 0
+// 시간복잡도 O(N^2)
+// 공간복잡도 O(N^2). 반복적 DP로 O(N) 최적화 가능
 int max_profit_path1(int A[], int n, int m)
 {
 	buffalgo2<int> cache = buffalgo2<int>::rectangle(n, m);

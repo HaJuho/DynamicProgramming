@@ -11,9 +11,9 @@ static const int MAXM = 3000;
 
 // n/m partition: n을 m 이하의 자연수의 합으로 나타내는 방법.
 // 방법 1
-// p(n,m) = p(n,n) for n < m
+// p(n,m) = p(n,n), if n < m
 // p(0,m) = 1
-// p(n,m) = p(n-1,1) + p(n-2,2) + ... + p(n-m,m) for n >= m, n > 0
+// p(n,m) = p(n-1,1) + p(n-2,2) + ... + p(n-m,m), if n >= m, n > 0
 // 시간복잡도 O(NM^2) -> 최적 아님
 // 공간복잡도 O(NM)
 static int cache1[MAXN + 1][MAXM + 1];
@@ -41,10 +41,10 @@ int number_partition1(int n, int m)
 }
 
 // 방법 2
-// p(n,m) = p(n,n) for n < m
+// p(n,m) = p(n,n), if n < m
 // p(0,m) = 1
-// p(n,0) = 0
-// p(n,m) = p(n,m-1) + p(n-m,m-1) + p(n-2m,m-1) + ... + p(n-km,m-1) for n >= km, n > 0, m > 0, k > 0
+// p(n,0) = 0, if n > 0
+// p(n,m) = sum(p(n-km,m-1), for k >= 0, km <= n), if n > 0, m > 0, n >= m
 // 시간복잡도 O(N^2M) ?? -> 최적 아님
 // 공간복잡도 O(NM). Knapsack, CoinExchange 처럼 순차적 DP 사용하면 O(N) 가능
 static int cache2[MAXN + 1][MAXM + 1];
@@ -74,12 +74,12 @@ int number_partition2(int n, int m)
 }
 
 // 방법 3
-// p(n,m) = p(n,n) for n < m
+// p(n,m) = p(n,n), if n < m
 // p(0,m) = 1
-// p(n,0) = 0
-// p(n,m) = p(n-m,m) + p(n,m-1) for n >= m, n > 0, m > 0
+// p(n,0) = 0, if n > 0
+// p(n,m) = p(n-m,m) + p(n,m-1), if n >= m, n > 0, m > 0
 // 시간복잡도 O(NM)
-// 공간복잡도 O(NM). Knapsack, CoinExchange 처럼 순차적 DP 사용하면 O(N) 가능
+// 공간복잡도 O(NM). 반복적 DP로 O(N) 최적화 가능
 static int cache3[MAXN + 1][MAXM + 1];
 
 void init_cache3()

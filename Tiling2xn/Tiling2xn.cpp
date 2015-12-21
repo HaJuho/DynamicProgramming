@@ -14,10 +14,11 @@ static const int DEN = 1000000007;
 
 static const int MAXN = 10000;
 
-// t(0) = 1, t(1) = 1
+// t(0) = 1
+// t(1) = 1
 // t(n) = t(n-1) + t(n-2), if n > 2
 // 시간복잡도 O(N)
-// 공간복잡도 O(N). 반복적 DP에서는 O(1)으로 줄일 수 있음.
+// 공간복잡도 O(N). 반복적 DP로 O(1) 최적화 가능
 // Fibonacci 참조
 
 // 1. memoization -> recursion overhead. stack overflow.
