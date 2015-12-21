@@ -8,6 +8,8 @@ Palindrome은 왼쪽에서 읽을 때와 오른쪽에서 읽을 때 같은 문자열(수열)
 
 Subsequence는 연속으로 선택할 필요는 없다.
 
+예) A = "AGCTCBMAACTGGAM"은 회문인 "AGTCAACTGA" 등을 부분 수열로 가지고 있다.
+
 B(i,j) = A[i...j]에서의 최장 회문 부분 수열
 
 ```

@@ -6,6 +6,8 @@ Palindrome은 왼쪽에서 읽을 때와 오른쪽에서 읽을 때 같은 문자열(수열)
 
 수열 A[0...n-1]에서 최장 회문 부분 연속 수열의 길이는?
 
+예) A = "AGCTCBMAACTGGAM"은 회문인 "CTC", "AA"와 "GG"를 Substring으로 가지고 있다.
+
 B(i,j) = A[i...j]이 회문이면 true, 아니면 false
 
 ```

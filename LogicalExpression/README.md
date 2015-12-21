@@ -6,6 +6,8 @@ A[0..n]에 true, false가 주어짐
 
 B[0..n-1]에 연산자가 주어짐
 
+예) A[0..3] = {T, F, T, T}, B[0..2]={or, and, xor} 일 때, T or ((F and T) xor T) = T 이고, T or (F and (T xor T)) = T 가 되어 두 가지 방법이 있다.
+
 T(i,j) = A[i...j]를 계산하여 true로 만드는 방법의 수
 
 F(i,j) = A[i...j]를 계산하여 false로 만드는 방법의 수
