@@ -26,8 +26,8 @@ using namespace juho;
 // B(i,j) = -1, if A[i][j] < 0, i > 0, j > 0
 // B(i,j) = -1, if B(i-1,j) < 0, B(i,j-1) < 0, B(i-1,j-1) < 0, i > 0, j > 0
 // B(i,j) = max(B(i-1,j), B(i,j-1), B(i-1,j-1)) + A[i][j], if A[i][j] >= 0, max(B(i-1,j), B(i,j-1), B(i-1,j-1)) >= 0
-// 시간복잡도 O(N^2)
-// 공간복잡도 O(N^2). 반복적 DP로 O(N) 최적화 가능
+// 시간복잡도 O(NM)
+// 공간복잡도 O(NM). 반복적 DP로 O(N) 또는 O(M) 최적화 가능
 int max_profit_path1(int A[], int n, int m)
 {
 	buffalgo2<int> cache = buffalgo2<int>::rectangle(n, m);

@@ -3,10 +3,13 @@
 
 namespace juho {
 
-	// shared pointer
-	// configurable base index
-	// no dynamic capacity change
-	// no boundary check
+	// shared pointer or unique pointer ??
+	// swap - Effective C++
+	// swap for triple buffering
+	// internal swap for double buffering, triple buffering
+	// configurable base index - OK
+	// don't need dynamic capacity change
+	// boundary check for debug mode
 	template <typename T>
 	class buffalgo1 {
 		int* refcnt;

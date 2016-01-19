@@ -21,6 +21,8 @@ using namespace juho;
 // B(i,j) = min(B(i,j-1),B(i-1,j),B(i-1,j-1)) + 1, if A[i][j] == 1, i > 0, j > 0
 // B(i,j) = 0, if A[i][j] == 0, i > 0, j > 0
 // B(i,j)의 최대값이 최대 정사각 행렬의 변의 길이
+// 시간복잡도 O(NM)
+// 공간복잡도 O(NM). 반복적 DP로 O(N) 또는 O(M) 최적화 가능
 
 int max_all_one_sqaure_submatrix1(int A[], int n, int m)
 {
