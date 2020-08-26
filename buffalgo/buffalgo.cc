@@ -10,7 +10,7 @@
 #include <string>
 #include <algorithm>
 
-#include "buffalgo.hpp"
+#include "buffalgo.h"
 
 using namespace std;
 using namespace juho;
