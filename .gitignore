@@ -35,3 +35,6 @@
 Release/
 Debug/
 .vs/
+out/
+CMakeSettings.json
+
